@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VoteMe - Register</title>
+		
+		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			
+	</head>
+
+
+	<body id="body-page">
+	  
+		<div class="container">
+			<img src="/public/img/vote_register.png" />
+			<br />
+			<% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+			<h2 class="clementine-text">Register</h2>
+	
+			<form method="POST" action="/register">
+			      <div class="form-group" style="margin-top:6px;">
+			       <input id="type-login" type="text" class="form-control" name="first" placeholder="First Name"/> 
+			    </div>
+			     <div class="form-group">
+			       <input id="type-login" type="text" class="form-control" name="last" placeholder="Last Name"/> 
+			    </div>
+			    <div class="form-group">
+			       <input id="type-login" type="email" class="form-control" name="email" placeholder="Email"/> 
+			    </div>
+			    <div class="form-group">
+			        <input id="type-login" type="password" class="form-control" name="password" placeholder="Password"/>
+			    </div>
+			    <div class="form-group">
+			        <input id="type-login" type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation"/>
+			    </div>
+			    <div class="form-group btn-container">
+				    <button id="type-login-button" type="submit" class="btn btn-add">Sign Up</button>
+			    </div>
+			</form>
+		</div>
+		<script type="text/javascript" src="/common/ajax-functions.js"></script>
+		<script type="text/javascript" src="/controllers/client/navigationController.client.js"></script>
+	</body>
+
+</html>

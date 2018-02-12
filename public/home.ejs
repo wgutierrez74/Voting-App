@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VoteMe - The site that tells nothing but the truth</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			
+		<!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
+		<link rel="import" href="/navigation">
+	</head>
+
+
+	<body id="body-page">
+		
+		<div class="container">
+			<img src="/public/img/vote_register.png" />
+			<br />
+			<h2 class="clementine-text">Welcome <span id="user-title"></span> </h2>
+			<% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+            <h1 style="text-align:center" class="orange-effect">My Polls:</h1>
+            <div style="background-color:#d8f0ff;" id="polls-view" class="well">
+          	  <% if(user.polls_created.length>0){ %>
+            	<% for(var i = 0; i < user.polls_created.length; i++){ %>
+            		<%if(i==0){ %>
+            			<div id="poll-row-<%=i+1%>" class="row">
+            		<% } else if(i % 3 == 0){ %>
+            			</div>
+            			<div id="poll-row-<%=i+1%>" class="row">
+            		<% } %>
+            			<div class="col-md-4 col-sm-12 home-poll" style="text-align:center">
+	            			<a href="/polls/get/<%=user.polls_created[i].poll_id%>">
+	            				<h4><%=user.polls_created[i].poll%></h4>
+	            			</a>
+	            			<h6 id="poll-link">https://voting-app-wgutierrez74.c9users.io/polls/get/<%=user.polls_created[i].poll_id%></h6>
+            				<br>
+            				<button onclick="share('<%=user.polls_created[i].poll_id%>')" type="button" class="btn btn-info">Share</button>
+            				<form style="display:inline" method="POST" action="/polls/delete/<%=user.polls_created[i].poll_id%>">
+            					<button type="submit" class="btn btn-danger">Delete</button>
+            				</form>
+	            		</div>
+	            	
+            		<%if(i== user.polls_created.length - 1){ %>
+            			</div>
+            		<% } %>
+    
+            	<% } %>
+              <% } else{ %>
+              	 <h2><a href="/polls/create">Create a poll now!</a></h2>
+              <% } %>
+            </div>
+            
+		</div>
+	
+		<script type="text/javascript" src="/common/ajax-functions.js"></script>
+		<script type="text/javascript" src="/controllers/client/sessionController.client.js"></script>
+		<script type="text/javascript" src="/controllers/client/navigationController.client.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VoteMe - The site that tells nothing but the truth</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			
+	</head>
+
+
+	<body id="body-page">
+	
+		<div class="container">
+			<h2 style="margin-top:20px;" class="clementine-text">Create a Poll! </h2>
+			
+			<div>
+			    <p style="color:#000296">What do you want to know?</p>
+			    <% if (message.length > 0){  %>
+			    	<div class="alert alert-danger"><%= message %></div>
+			    <% } %>
+			    <form method="POST" action="/polls/create">
+			        <div class="form-group">
+			           <label>Question: </label>
+			           <input type="text" class="form-control" name="question"/> 
+			        </div>
+			        <div id="op1" class="form-group">
+			            <label>Option #1</label>
+			            <input type="text" class="form-control option" name="options">
+			        </div>
+			        <div id="op2" class="form-group">
+			            <label>Option #2</label>
+			            <input type="text" class="form-control option" name="options">
+			        </div>
+			      
+			      
+			        <div class="form-group">
+			            <button class="btn btn-primary" type="submit">Create Poll</button>
+			            
+			            <button type="button" id="add-option" class="btn btn-info">Add Option</button>
+			        </div>
+			    </form>
+			    
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="/common/ajax-functions.js"></script>
+		<script type="text/javascript" src="/controllers/client/navigationController.client.js"></script>
+		<script type="text/javascript" src="/controllers/client/createPollController.client.js"></script> 
+	</body>
+
+</html>

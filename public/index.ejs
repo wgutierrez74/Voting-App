@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>VoteMe - The site that tells nothing but the truth</title>
+		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			
+	</head>
+
+
+	<body id="body-page">
+		
+		<div class="container">
+			<img src="/public/img/Vote_Me.png" />
+			<br />
+			<h2 class="clementine-text">Vote ME</h2>
+	
+			<p>Want to find out the truth?<br> Log in below to find out</p>
+			<br>
+			<% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+			<form method="POST" action="/login">
+			    <div class="form-group">
+			       <input id="type-login" type="email" class="form-control" name="email" placeholder="email"/> 
+			    </div>
+			    <div class="form-group">
+			        <input id="type-login" type="text" class="form-control" name="password" placeholder="password"/>
+			    </div>
+			    <div class="form-group btn-container">
+				    <button id="type-login-button" type="submit" class="btn btn-add">LOGIN</button>
+			    </div>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="/common/ajax-functions.js"></script>
+		<script type="text/javascript" src="/controllers/client/navigationController.client.js"></script>
+	</body>
+
+</html>

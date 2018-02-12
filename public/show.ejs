@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VoteMe - The site that tells nothing but the truth</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			
+		<link rel="import" href="/navigation">
+	</head>
+
+
+	<body id="body-page">
+	    
+		<div id="poll-container" class="container" style="margin-top:30px">
+					<div style="background-color:#aedcf9; background-color: #d8f0ff;" class = "row well">
+			    <div class="col-md-6 col-sm-12 poll-show-options">
+			    <div style="margin-top:25%" id="poll-option-submit">
+				    <h2></h2>
+				    <p></p>
+				    <form>
+				        <% for(var i = 0 ; i < poll.options.length; i++){ %>
+				            <div id="op<%=i+1%>" class="form-check">
+	                            <input type="radio" class="form-check-input" name="optionsRadio" id="option<%=i+1%>" value="<%=poll.options[i].option %>">
+	                            <label id="label-option1" class="form-check-label"> <%=poll.options[i].option %>    </label>
+	                            <label class="form-check-label">Votes: <%=poll.options[i].votes %></label>
+	                        </div>
+	
+				        <% } %>
+				        <div class="form-group">
+				        	<button type="button" id="submit-button" class="btn btn-primary">Submit Vote</button>
+				        	<%if (user) { %>
+				        		<button id="add-option" class="btn btn-warning" type="button">Add Option</button>
+				        	<% } %>
+				        </div>
+				    </form>
+				  </div>
+				</div>
+				 
+				 <div class="col-md-6 col-sm-12 show-poll-chart">
+				 
+				 	<div class="show-chart" id="google-chart"></div>			
+				 </div>
+			</div>
+	</div>
+		  
+		  
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Modal -->
+  <div class="modal fade" id="optionModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form method="POST" action="/polls/add/options/<%=poll._id%>" role="form">
+            
+             <div id="nop1" class="form-group">
+	            <label>New Option choice #1</label>
+	            <input type="text" class="form-control option" name="newoptions">
+	        </div>
+            <div id="add-nop" class="form-group">
+            	<button id ="add-nop-button" class="btn btn-warning" type="button">Add option</button>
+            	<button id ="remove-nop-button" class="btn btn-danger" type="button">Remove option</button>
+            </div>
+           
+              <button type="submit" class="btn btn-success btn-block">Submit new options</button>
+          </form>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div> 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				 
+		</div>
+		
+		<script type="text/javascript" src="/common/ajax-functions.js"></script>
+		<script type="text/javascript" src="/controllers/client/navigationController.client.js"></script>
+		<script type="text/javascript" src="/controllers/client/showPollController.client.js"></script>
+		
+		
+	</body>
+
+</html>

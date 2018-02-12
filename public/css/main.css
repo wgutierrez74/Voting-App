@@ -21,6 +21,7 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
+	padding-top: 5%;
 }
 
 header {
@@ -34,7 +35,7 @@ p {
 	margin: 8px 0 0 0;
 }
 
-.container p {
+.container p, .container h2, .container form {
 	text-align: center;
 	padding: 0;
 }
@@ -104,12 +105,14 @@ img {
 	display: block;
 }
 
-.clementine-text { /* Styling for the Clementine.js text */
-	padding: 0;
-	margin: -25px 0 0 0;
-	font-weight: 500;
-	font-size: 60px;
-	color: #FFA000;
+.form-group input{
+	width:40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.navbar-inverse{
+	background-color: #00BCD4;
 }
 
 /****** Click Styling ******/
@@ -128,7 +131,8 @@ img {
 	font-size: 14px;
 	border-radius: 3px;
 	padding: 10px 5px;
-	width: 100px;
+	
+
 	font-weight: 500;
 }
 
@@ -153,48 +157,10 @@ img {
 
 /****** Profile Styling ******/
 
-.github-profile {
-	width: 350px;
-	height: 200px;
-	border-radius: 3px;
-	margin: 86px auto 0 auto;
-	background-color: #EEE;
-	text-align: center;
-	color: #000;
-}
 
-.github-profile p:first-child {
-	padding-top: 16px;
-}
-
-.github-profile p:nth-child(5) {
-	margin-bottom: 16px
-}
-
-.github-profile p {
-	margin: 0 0 0 16px;
-	text-align: left;
-}
-
-.profile-value {
-	font-weight: 400;
-}
 
 span {
 	font-weight: 500;
-}
-
-.github-profile > img {
-	padding-top: 16px;
-	margin-bottom: 16px;
-}
-
-.github-profile .menu:hover {
-	color: #FFA000;
-}
-
-.github-profile .menu:active {
-	color: #FF630D;
 }
 
 #menu-divide {
@@ -202,3 +168,131 @@ span {
 	display: inline;
 	margin: 0;
 }
+
+#polls-view{
+	margin-top: 20px;
+}
+.home-poll{
+ 	min-height: 20px;
+ 	max-width: 32%;
+    padding: 19px;
+    margin-right: 5px;
+    margin-left: 8px;
+    margin-bottom:10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+
+/* Welcome Page-Register */
+#type-login {
+	width: 22%;
+}
+
+#type-login-button {
+	width: 22%;
+	margin-top: 6px;
+}
+
+#body-page{
+	background-color: #96d6ff;
+}
+
+.clementine-text { /* Styling for the Clementine.js text */
+	padding: 0;
+	margin: -25px 0 0 0;
+	font-weight: 500;
+	font-size: 60px;
+	color: #ffa230;
+}
+
+/*Polls Page */
+
+.polls-cont{
+	background-color: rgb(127, 252, 255);
+	opacity: 0.8;
+}
+
+#poll-view {
+    transition: font-size 1s;
+   
+}
+
+#poll-view:hover{
+	font-size:50px;
+	text-decoration: none;
+}
+
+.orange-effect{
+	color: #000296;
+}
+
+.polls-title{
+	text-align: left;
+	font-size: 60px;
+}
+
+.poll-show-options{
+	height:500px; 
+	background-color:#d8f0ff; 
+	margin-right:-15px; 
+	margin-left:2px;
+}
+
+.show-chart{
+	width:500px;
+	height: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .home-poll{
+    	min-height: 20px;
+ 		max-width:100%;
+    /*padding: 15px;*/
+   
+    /*margin-bottom:10px;*/
+    background-color: #f5f5f5;
+    /*border: 1px solid #e3e3e3;*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    }
+    body {
+		font-family: 'Roboto', sans-serif;
+		font-size: 16px;
+		margin: 0;
+		padding: 0;
+		padding-top: 50px;
+	}
+	.poll-show-options{
+		background-color:#d8f0ff;
+		height: 175px;
+		margin-top: -13%;
+	}
+	.show-poll-chart{
+		text-align: center;
+		
+	}
+	.show-chart{
+		width:95%;
+		margin: 0 auto;
+	}
+	
+	#type-login {
+		width: 250px;
+	}
+	
+	#poll-view {
+    transition: font-size 1s;
+   
+}
+
+#poll-view:hover{
+	font-size:35px;
+	text-decoration: none;
+}
+}
+
+
